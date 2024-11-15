@@ -7,10 +7,10 @@ composer require iranimij/product-labels
 ```
 
 ### Features
-1. Adds sales label to product images that are on sale.
+1. Adding sales label to product images that are on sale.
 
 ### Upcoming Features
-1. Adds new label to product images that are new.
+1. Adding a new label to product images that are new.
 2. Creating custom labels.
 3. Adding labels based on different conditions.
 4. ...
