@@ -3,6 +3,17 @@
     "license": "OSL-3.0",
     "description": "Add label to your product images",
     "type": "magento2-module",
+    "keywords": [
+        "product-labels",
+        "product-badgs",
+        "magento"
+    ],
+    "authors": [
+        {
+            "name": "Iman Aboheydary (Iranimij)",
+            "email": "iranimij@gmail.com"
+        }
+    ],
     "require": {
         "magento/framework": "^103.0",
         "magento/module-catalog": "^104.0"
