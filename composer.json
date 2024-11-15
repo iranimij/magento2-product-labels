@@ -1,17 +1,17 @@
 {
-  "name": "iranimij/module-product-labels",
-  "version": "1.0.0",
-  "description": "Add label to your product images",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*"
-  },
-  "autoload": {
-    "files": [
-        "registration.php"
-    ],
-    "psr-4": {
-      "Iranimij\\ProductLabels\\": ""
+    "name": "iranimij/module-product-labels",
+    "description": "Add label to your product images",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "^103.0",
+        "magento/module-catalog": "^104.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Iranimij\\ProductLabels\\": ""
+        }
     }
-  }
 }
