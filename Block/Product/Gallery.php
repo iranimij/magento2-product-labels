@@ -19,11 +19,11 @@ class Gallery extends MainGallery
         Context $context,
         ArrayUtils $arrayUtils,
         EncoderInterface $jsonEncoder,
+        private readonly Registry $registry,
+        array $galleryImagesConfig = [],
         array $data = [],
         ImagesConfigFactoryInterface $imagesConfigFactory = null,
-        array $galleryImagesConfig = [],
         UrlBuilder $urlBuilder = null,
-        private readonly Registry $registry,
     ) {
         parent::__construct($context, $arrayUtils, $jsonEncoder, $data, $imagesConfigFactory, $galleryImagesConfig,
             $urlBuilder);
