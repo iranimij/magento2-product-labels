@@ -14,3 +14,7 @@ composer require iranimij/product-labels
 2. Creating custom labels.
 3. Adding labels based on different conditions.
 4. ...
+
+### Example Usage
+
+![Screenshot from 2024-11-15 23-16-07.png](example.png)
