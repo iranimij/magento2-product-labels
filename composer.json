@@ -1,6 +1,7 @@
 {
     "name": "iranimij/magento2-product-labels",
     "license": "OSL-3.0",
+    "version": "1.0.2",
     "description": "Add label to your product images",
     "type": "magento2-module",
     "keywords": [

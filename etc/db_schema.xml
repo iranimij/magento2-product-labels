@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="iranimij_product_labels" resource="default" engine="innodb" comment="Product Labels">
+        <column xsi:type="int" name="label_id" padding="6" unsigned="false" nullable="false" identity="true" comment="Post ID"/>
+        <column xsi:type="varchar" name="text" nullable="false" length="255" comment="Label Text"/>
+        <column xsi:type="varchar" name="text_background_color" nullable="false" comment="Hex"/>
+        <column xsi:type="varchar" name="text_color" nullable="false" comment="Hex"/>
+        <column xsi:type="text" name="conditions" nullable="true" comment="Conditions"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="label_id"/>
+        </constraint>
+    </table>
+</schema>

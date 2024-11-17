@@ -1,0 +1,16 @@
+{
+    "iranimij_product_labels": {
+        "column": {
+            "label_id": true,
+            "text": true,
+            "text_background_color": true,
+            "text_color": true,
+            "conditions": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

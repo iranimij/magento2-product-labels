@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Iranimij\ProductLabels\Ui\DataProvider\Category\ListingDataProvider">
+        <plugin name="dev_grid_attributes" type="Iranimij\ProductLabels\Plugin\AddAttributesToUiDataProvider" />
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="dev_grid_category_listing_data_source" xsi:type="string">DevGridCategoryCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="DevGridCategoryCollection" type="Iranimij\ProductLabels\Ui\DataProvider\Category\Listing\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">iranimij_product_labels</argument>
+            <argument name="resourceModel" xsi:type="string">Iranimij\ProductLabels\Model\ResourceModel\ProductLabels</argument>
+        </arguments>
+    </virtualType>
+</config>
