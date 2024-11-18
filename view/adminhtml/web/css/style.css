@@ -1,0 +1,13 @@
+#ir-product-labels-form {
+    flex-wrap: wrap;
+}
+
+label {
+    width: 250px;
+    display: inline-block;
+}
+
+.ir-product-labels-form__field_wrapper {
+    padding: 10px;
+    margin-bottom: 10px;
+}

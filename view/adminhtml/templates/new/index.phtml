@@ -1,0 +1,31 @@
+<div>
+    <form id="ir-product-labels-form" action="<?= $this->getUrl('productlabels/new/save') ?>" method="post">
+        <input type="hidden" name="form_key" value="<?= $this->getFormKey() ?>">
+        <div class="ir-product-labels-form__field_wrapper">
+            <label for="name"><?= __('Label Text') ?></label>
+            <input type="text" name="name" id="name" class="admin__control-text">
+        </div>
+        <div class="ir-product-labels-form__field_wrapper">
+            <label for="name"><?= __('Text color') ?></label>
+            <input type="color" name="name" id="name" class="admin__control-text">
+        </div>
+        <div class="ir-product-labels-form__field_wrapper">
+            <label for="name"><?= __('Text Background Color') ?></label>
+            <input type="color" name="name" id="name" class="admin__control-text">
+        </div>
+        <br>
+        <hr>
+        <h3>Conditions</h3>
+        <small>Just show the label if ...</small>
+        <div class="ir-product-labels-form__field_wrapper">
+            <label for="name"><?= __('Is on sale') ?></label>
+            <select name="name" id="name" class="admin__control-select">
+                <option value="true">True</option>
+                <option value="true">False</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="action-default primary"><?= __('Save') ?></button>
+        </div>
+    </form>
+</div>
