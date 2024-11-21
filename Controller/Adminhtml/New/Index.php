@@ -4,21 +4,15 @@ declare(strict_types=1);
 
 namespace Iranimij\ProductLabels\Controller\Adminhtml\New;
 
-use Magento\Framework\App\Action\Action;
-use Magento\Framework\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\Controller\ResultFactory;
 
-class Index extends Action
+class Index extends \Magento\Backend\App\Action
 {
-    public function __construct(
-        Context $context,
-        private readonly PageFactory $resultPageFactory
-    ) {
-        parent::__construct($context);
-    }
-
+    /**
+     * @return \Magento\Backend\Model\View\Result\Page
+     */
     public function execute()
     {
-        return $this->resultPageFactory->create();
+        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
     }
 }
