@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Iranimij\ProductLabels\Controller\Adminhtml\New;
 
-use \Iranimij\ProductLabels\Model\ProductLabelsFactory as ProductLabels;
+use Iranimij\ProductLabels\Model\ProductLabels;
+use Iranimij\ProductLabels\Model\ProductLabelsFactory as ProductLabelsFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 class Save extends Action implements ButtonProviderInterface
@@ -16,6 +16,7 @@ class Save extends Action implements ButtonProviderInterface
     public function __construct(
         Context $context,
         private readonly RequestInterface $request,
+        private readonly ProductLabelsFactory $productLabelsFactory,
         private readonly ProductLabels $productLabels,
     ) {
         parent::__construct($context);
@@ -23,9 +24,19 @@ class Save extends Action implements ButtonProviderInterface
 
     public function execute()
     {
-        $productLabel = $this->productLabels->create();
-        $productLabel->setData($this->request->getParams());
-        $productLabel->save();
+        $labelId = $this->request->getParam('label_id');
+        $data    = $this->request->getParams();
+        try {
+            if ($labelId) {
+                $productLabel = $this->productLabels->load($labelId);
+            } else {
+                $productLabel = $this->productLabelsFactory->create();
+                unset($data['label_id']);
+            }
+            $productLabel->setData($data)->save();
+        } catch (\Exception $e) {
+            $this->messageManager->addErrorMessage($e->getMessage());
+        }
 
         // redirect to a url
         $resultRedirect = $this->resultRedirectFactory->create();
