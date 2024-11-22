@@ -36,6 +36,8 @@ class DataProvider extends AbstractDataProvider
      */
     public function getData()
     {
-        return [];
+        return [
+            'text' => 'Hello world'
+        ];
     }
 }

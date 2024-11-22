@@ -114,6 +114,14 @@
                 <label translate="true">Background Text</label>
             </settings>
         </column>
+        <actionsColumn name="action" class="Iranimij\ProductLabels\Ui\Component\Category\Listing\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">label_id</item>
+                    <item name="sortOrder" xsi:type="number">80</item>
+                </item>
+            </argument>
+        </actionsColumn>
 <!--        <actionsColumn name="actions" class="Iranimij\ProductLabels\Ui\Component\Category\Listing\Column\Actions" sortOrder="200">-->
 <!--            <argument name="data" xsi:type="array">-->
 <!--                <item name="config" xsi:type="array">-->

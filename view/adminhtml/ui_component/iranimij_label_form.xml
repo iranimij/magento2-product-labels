@@ -36,7 +36,7 @@
         <dataProvider class="Iranimij\ProductLabels\Model\DataProvider" name="iranimij_label_form_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
-                <primaryFieldName>entity_id</primaryFieldName>
+                <primaryFieldName>label_id</primaryFieldName>
             </settings>
         </dataProvider>
     </dataSource>
@@ -48,13 +48,24 @@
                 <item name="sortOrder" xsi:type="number">20</item>
             </item>
         </argument>
+        <field name="label_id" formElement="hidden" sortOrder="10">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">label_id</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <dataScope>label_id</dataScope>
+            </settings>
+        </field>
         <field name="text">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Label Text</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">label</item>
+                    <item name="source" xsi:type="string">text</item>
                     <item name="dataScope" xsi:type="string">text</item>
                 </item>
             </argument>

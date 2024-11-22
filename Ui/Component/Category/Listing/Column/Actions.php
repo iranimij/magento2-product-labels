@@ -12,35 +12,23 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class Actions extends Column
 {
     /**
+     * Url path
+     */
+    public const URL_PATH_EDIT = 'iranimij_product_labels/New/index';
+
+    /**
      * @var UrlInterface
      */
-    protected $_urlBuilder;
+    private $urlBuilder;
 
-    /**
-     * @var string
-     */
-    protected $_viewUrl;
-
-    /**
-     * Constructor
-     *
-     * @param ContextInterface   $context
-     * @param UiComponentFactory $uiComponentFactory
-     * @param UrlInterface       $urlBuilder
-     * @param string             $viewUrl
-     * @param array              $components
-     * @param array              $data
-     */
     public function __construct(
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
         UrlInterface $urlBuilder,
-        $viewUrl = '',
         array $components = [],
         array $data = []
     ) {
-        $this->_urlBuilder = $urlBuilder;
-        $this->_viewUrl    = $viewUrl;
+        $this->urlBuilder = $urlBuilder;
         parent::__construct($context, $uiComponentFactory, $components, $data);
     }
 
@@ -48,19 +36,23 @@ class Actions extends Column
      * Prepare Data Source
      *
      * @param array $dataSource
-     *
      * @return array
      */
     public function prepareDataSource(array $dataSource)
     {
         if (isset($dataSource['data']['items'])) {
             foreach ($dataSource['data']['items'] as &$item) {
-                $name = $this->getData('name');
-                if (isset($item['entity_id'])) {
-                    $item[$name]['view'] = [
-                        'href'   => $this->_urlBuilder->getUrl($this->_viewUrl, ['id' => $item['entity_id']]),
-                        'target' => '_blank',
-                        'label'  => __('View on Frontend')
+                if (isset($item['label_id'])) {
+                    $item[$this->getData('name')] = [
+                        'edit' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_EDIT,
+                                [
+                                    'id' => $item['label_id']
+                                ]
+                            ),
+                            'label' => __('Edit')
+                        ]
                     ];
                 }
             }
