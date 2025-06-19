@@ -129,4 +129,26 @@
             </formElements>
         </field>
     </fieldset>
+    <fieldset name="product_conditions" sortOrder="40">
+        <settings>
+            <collapsible>true</collapsible>
+            <label translate="true">Product Conditions</label>
+            <opened>false</opened>
+        </settings>
+
+        <field name="label_display_conditions" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Iranimij_ProductLabels/js/form/element/rule-conditions-chooser</item>
+                    <item name="elementTmpl" xsi:type="string">Iranimij_ProductLabels/form/element/rule-conditions-chooser</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Product Conditions</label>
+                <componentType>field</componentType>
+            </settings>
+        </field>
+
+    </fieldset>
 </form>
