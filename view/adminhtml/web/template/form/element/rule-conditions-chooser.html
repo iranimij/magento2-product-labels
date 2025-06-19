@@ -1,0 +1,11 @@
+<!-- ko if: (visible) -->
+<form data-bind="event: {
+        change: processRuleFormChange.bind(element) },
+        attr: {id: conditionsFormId, action: ''}">
+    <div class="rule-tree-wrapper">
+        <div class="rule-tree" data-bind="html: getFormContent()">
+        </div>
+    </div>
+    <div data-bind="afterRender: element.initForm.bind(element)"></div>
+</form>
+<!-- /ko -->
