@@ -1,3 +1,5 @@
+> **Abandoned.** This package is no longer maintained. Use [OpenLabel](https://github.com/iranimij/openlabel) (`iranimij/openlabel`) instead: product labels for Magento 2 and Hyvä, free and MIT.
+
 ## Iranimij_ProductLabels
 By this module you can add labels to your product images.
 
